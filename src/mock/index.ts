@@ -1,0 +1,11 @@
+export { patientService } from './services/patient.service'
+export { orderService } from './services/order.service'
+export { resultService } from './services/result.service'
+export { reportService } from './services/report.service'
+
+export { mockPatients } from './data/patients'
+export { mockTestItems } from './data/test-items'
+export { mockOrders } from './data/orders'
+export { mockResults } from './data/results'
+export { mockReports } from './data/reports'
+export { mockUsers } from './data/users'

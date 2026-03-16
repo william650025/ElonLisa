@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ── 全域重置與基礎設定 ────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #2C2C2C;
+  background-color: #F5F0EB;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8D2CA;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8B0A8;
+}
+
+/* ── 選取色 ────────────────────────────────────── */
+::selection {
+  background-color: #3C3C3C;
+  color: #F5F0EB;
+}
+
+/* ── Focus Ring 全域設定 ───────────────────────── */
+:focus-visible {
+  outline: 2px solid #3C3C3C;
+  outline-offset: 2px;
+}
