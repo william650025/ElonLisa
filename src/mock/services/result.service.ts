@@ -1,65 +1,75 @@
 import type { TestResult } from '@/types'
-import { mockResults } from '@/mock/data/results'
-import { delay } from '@/mock/helpers/delay'
-import { generateId } from '@/mock/helpers/id-generator'
 
-let results = [...mockResults]
+const delay = (ms = 150) => new Promise((r) => setTimeout(r, ms))
+
+let resultCounter = 20
+
+const mockResults: TestResult[] = [
+  { id: 'R001', orderId: 'O004', testItemId: 'T006', patientId: 'P004', value: '6.2', numericValue: 6.2, flag: 'H', unit: '%', referenceRange: '4.0 – 5.6', isVerified: true, performedBy: 'U002', performedAt: '2026-03-16T09:30:00Z', verifiedBy: 'U002', verifiedAt: '2026-03-16T10:00:00Z' },
+  { id: 'R002', orderId: 'O005', testItemId: 'T001', patientId: 'P005', value: '7.5', numericValue: 7.5, flag: null, unit: '10³/µL', referenceRange: '4.0 – 11.0', isVerified: true, performedBy: 'U002', performedAt: '2026-03-15T16:00:00Z', verifiedBy: 'U002', verifiedAt: '2026-03-15T17:00:00Z' },
+  { id: 'R003', orderId: 'O005', testItemId: 'T004', patientId: 'P005', value: '28', numericValue: 28, flag: null, unit: 'U/L', referenceRange: '5 – 40', isVerified: true, performedBy: 'U002', performedAt: '2026-03-15T16:00:00Z', verifiedBy: 'U002', verifiedAt: '2026-03-15T17:00:00Z' },
+  { id: 'R004', orderId: 'O009', testItemId: 'T004', patientId: 'P009', value: '45', numericValue: 45, flag: 'H', unit: 'U/L', referenceRange: '5 – 40', isVerified: true, performedBy: 'U002', performedAt: '2026-03-13T14:00:00Z', verifiedBy: 'U002', verifiedAt: '2026-03-13T15:00:00Z' },
+  { id: 'R005', orderId: 'O009', testItemId: 'T005', patientId: 'P009', value: '38', numericValue: 38, flag: null, unit: 'U/L', referenceRange: '5 – 40', isVerified: true, performedBy: 'U002', performedAt: '2026-03-13T14:00:00Z', verifiedBy: 'U002', verifiedAt: '2026-03-13T15:00:00Z' },
+  { id: 'R006', orderId: 'O009', testItemId: 'T006', patientId: 'P009', value: '5.4', numericValue: 5.4, flag: null, unit: '%', referenceRange: '4.0 – 5.6', isVerified: true, performedBy: 'U002', performedAt: '2026-03-13T14:00:00Z', verifiedBy: 'U002', verifiedAt: '2026-03-13T15:00:00Z' },
+]
 
 export const resultService = {
-  async getAll(): Promise<TestResult[]> {
-    await delay(300)
-    return [...results]
+  async getByOrderId(orderId: string): Promise<TestResult[]> {
+    await delay()
+    return mockResults.filter((r) => r.orderId === orderId).map((r) => ({ ...r }))
   },
 
-  async getById(id: string): Promise<TestResult | undefined> {
+  async getByPatientId(patientId: string): Promise<TestResult[]> {
+    await delay()
+    return mockResults.filter((r) => r.patientId === patientId).map((r) => ({ ...r }))
+  },
+
+  async save(result: Partial<TestResult>): Promise<TestResult> {
     await delay(200)
-    return results.find((r) => r.id === id)
-  },
-
-  async getByOrder(orderId: string): Promise<TestResult[]> {
-    await delay(250)
-    return results.filter((r) => r.orderId === orderId)
-  },
-
-  async getByPatient(patientId: string): Promise<TestResult[]> {
-    await delay(250)
-    return results.filter((r) => r.patientId === patientId)
-  },
-
-  async create(data: Partial<TestResult>): Promise<TestResult> {
-    await delay(400)
-    const result: TestResult = {
-      id: generateId(),
-      orderId: data.orderId ?? '',
-      testItemId: data.testItemId ?? '',
-      patientId: data.patientId ?? '',
-      value: data.value ?? '',
-      numericValue: data.numericValue,
-      flag: data.flag ?? null,
-      unit: data.unit,
-      referenceRange: data.referenceRange,
-      comment: data.comment,
-      performedBy: data.performedBy,
-      performedAt: data.performedAt ?? new Date().toISOString(),
-      isVerified: false,
+    resultCounter++
+    const now = new Date().toISOString()
+    const saved: TestResult = {
+      id: result.id || `R${String(resultCounter).padStart(3, '0')}`,
+      orderId: result.orderId || '',
+      testItemId: result.testItemId || '',
+      patientId: result.patientId || '',
+      value: result.value || '',
+      numericValue: result.numericValue,
+      flag: result.flag ?? null,
+      unit: result.unit,
+      referenceRange: result.referenceRange,
+      comment: result.comment,
+      performedBy: result.performedBy || 'U002',
+      performedAt: now,
+      isVerified: result.isVerified || false,
     }
-    results.push(result)
-    return result
+    mockResults.push(saved)
+    return { ...saved }
   },
 
-  async update(id: string, data: Partial<TestResult>): Promise<TestResult> {
+  async saveAll(results: Partial<TestResult>[]): Promise<TestResult[]> {
     await delay(300)
-    const index = results.findIndex((r) => r.id === id)
-    if (index === -1) throw new Error(`Result ${id} not found`)
-    results[index] = { ...results[index], ...data }
-    return results[index]
-  },
-
-  async verify(id: string, verifiedBy: string): Promise<TestResult> {
-    return this.update(id, {
-      isVerified: true,
-      verifiedBy,
-      verifiedAt: new Date().toISOString(),
-    })
+    const saved: TestResult[] = []
+    const now = new Date().toISOString()
+    for (const result of results) {
+      resultCounter++
+      const r: TestResult = {
+        id: result.id || `R${String(resultCounter).padStart(3, '0')}`,
+        orderId: result.orderId || '',
+        testItemId: result.testItemId || '',
+        patientId: result.patientId || '',
+        value: result.value || '',
+        numericValue: result.numericValue,
+        flag: result.flag ?? null,
+        unit: result.unit,
+        referenceRange: result.referenceRange,
+        performedBy: 'U002',
+        performedAt: now,
+        isVerified: false,
+      }
+      mockResults.push(r)
+      saved.push({ ...r })
+    }
+    return saved
   },
 }
