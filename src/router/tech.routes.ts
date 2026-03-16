@@ -38,6 +38,12 @@ const techRoutes: RouteRecordRaw = {
       meta: { title: '報告審核' },
       props: true,
     },
+    {
+      path: 'qc',
+      name: 'QCDashboard',
+      component: () => import('@/views/tech/QCDashboard.vue'),
+      meta: { title: '品質控制' },
+    },
   ],
 }
 

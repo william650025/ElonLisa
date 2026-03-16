@@ -31,6 +31,25 @@ const adminRoutes: RouteRecordRaw = {
       meta: { title: '醫令詳情' },
       props: true,
     },
+    {
+      path: 'patients',
+      name: 'PatientList',
+      component: () => import('@/views/admin/PatientList.vue'),
+      meta: { title: '病患管理' },
+    },
+    {
+      path: 'patients/:id',
+      name: 'PatientDetail',
+      component: () => import('@/views/admin/PatientDetail.vue'),
+      meta: { title: '病患詳情' },
+      props: true,
+    },
+    {
+      path: 'settings',
+      name: 'Settings',
+      component: () => import('@/views/admin/Settings.vue'),
+      meta: { title: '系統設定' },
+    },
   ],
 }
 
