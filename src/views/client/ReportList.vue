@@ -43,10 +43,6 @@ function getStatusClass(status: string): string {
   return map[status] || ''
 }
 
-function hasAbnormal(_reportId: string): boolean {
-  // Simplified: would check results for abnormal flags
-  return Math.random() > 0.5
-}
 
 onMounted(async () => {
   await Promise.all([

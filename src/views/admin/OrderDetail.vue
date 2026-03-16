@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, computed } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { useRouter } from 'vue-router'
 import { useOrderStore } from '@/stores/order'
 import { usePatientStore } from '@/stores/patient'
 import { useTestItemStore } from '@/stores/testItem'

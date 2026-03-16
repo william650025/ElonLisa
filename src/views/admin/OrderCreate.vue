@@ -5,7 +5,7 @@ import { usePatientStore } from '@/stores/patient'
 import { useTestItemStore } from '@/stores/testItem'
 import { useOrderStore } from '@/stores/order'
 import { useNotificationStore } from '@/stores/notification'
-import type { Patient, TestItem } from '@/types'
+import type { Patient } from '@/types'
 
 const router = useRouter()
 const patientStore = usePatientStore()

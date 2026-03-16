@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import type { Report, ReportStatus } from '@/types'
+import type { Report } from '@/types'
 import { reportService } from '@/mock/services/report.service'
 
 export const useReportStore = defineStore('report', () => {

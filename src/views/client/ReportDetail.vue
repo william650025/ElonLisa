@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useReportStore } from '@/stores/report'
 import { usePatientStore } from '@/stores/patient'
 import { useResultStore } from '@/stores/result'
 import { useTestItemStore } from '@/stores/testItem'
-import type { AbnormalFlag, TestResult } from '@/types'
+import type { AbnormalFlag } from '@/types'
 
 const props = defineProps<{ id: string }>()
 
