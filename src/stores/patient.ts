@@ -26,8 +26,8 @@ export const usePatientStore = defineStore('patient', () => {
     error.value = null
     try {
       patients.value = await patientService.getAll()
-    } catch (e: any) {
-      error.value = e.message || '載入病患資料失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '載入病患資料失敗'
     } finally {
       loading.value = false
     }
@@ -38,8 +38,8 @@ export const usePatientStore = defineStore('patient', () => {
     error.value = null
     try {
       currentPatient.value = await patientService.getById(id)
-    } catch (e: any) {
-      error.value = e.message || '載入病患資料失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '載入病患資料失敗'
     } finally {
       loading.value = false
     }

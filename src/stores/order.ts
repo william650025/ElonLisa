@@ -44,8 +44,8 @@ export const useOrderStore = defineStore('order', () => {
     error.value = null
     try {
       orders.value = await orderService.getAll()
-    } catch (e: any) {
-      error.value = e.message || '載入醫令失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '載入醫令失敗'
     } finally {
       loading.value = false
     }
@@ -56,8 +56,8 @@ export const useOrderStore = defineStore('order', () => {
     error.value = null
     try {
       currentOrder.value = await orderService.getById(id)
-    } catch (e: any) {
-      error.value = e.message || '載入醫令失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '載入醫令失敗'
     } finally {
       loading.value = false
     }
@@ -70,8 +70,8 @@ export const useOrderStore = defineStore('order', () => {
       const newOrder = await orderService.create(data)
       orders.value.unshift(newOrder)
       return newOrder
-    } catch (e: any) {
-      error.value = e.message || '建立醫令失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '建立醫令失敗'
       throw e
     } finally {
       loading.value = false
@@ -91,8 +91,8 @@ export const useOrderStore = defineStore('order', () => {
         currentOrder.value = updated
       }
       return updated
-    } catch (e: any) {
-      error.value = e.message || '更新醫令狀態失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '更新醫令狀態失敗'
       throw e
     } finally {
       loading.value = false

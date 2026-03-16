@@ -14,8 +14,8 @@ export const useResultStore = defineStore('result', () => {
     error.value = null
     try {
       currentResults.value = await resultService.getByOrderId(orderId)
-    } catch (e: any) {
-      error.value = e.message || '載入檢驗結果失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '載入檢驗結果失敗'
     } finally {
       loading.value = false
     }
@@ -33,8 +33,8 @@ export const useResultStore = defineStore('result', () => {
         currentResults.value.push(saved)
       }
       return saved
-    } catch (e: any) {
-      error.value = e.message || '儲存檢驗結果失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '儲存檢驗結果失敗'
       throw e
     } finally {
       loading.value = false
@@ -48,8 +48,8 @@ export const useResultStore = defineStore('result', () => {
       const saved = await resultService.saveAll(resultsData)
       currentResults.value = saved
       return saved
-    } catch (e: any) {
-      error.value = e.message || '儲存檢驗結果失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '儲存檢驗結果失敗'
       throw e
     } finally {
       loading.value = false
@@ -75,8 +75,8 @@ export const useResultStore = defineStore('result', () => {
     error.value = null
     try {
       results.value = await resultService.getByPatientId(patientId)
-    } catch (e: any) {
-      error.value = e.message || '載入檢驗結果失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '載入檢驗結果失敗'
     } finally {
       loading.value = false
     }

@@ -29,8 +29,8 @@ export const useReportStore = defineStore('report', () => {
     error.value = null
     try {
       reports.value = await reportService.getAll()
-    } catch (e: any) {
-      error.value = e.message || '載入報告失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '載入報告失敗'
     } finally {
       loading.value = false
     }
@@ -41,8 +41,8 @@ export const useReportStore = defineStore('report', () => {
     error.value = null
     try {
       currentReport.value = await reportService.getById(id)
-    } catch (e: any) {
-      error.value = e.message || '載入報告失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '載入報告失敗'
     } finally {
       loading.value = false
     }
@@ -61,8 +61,8 @@ export const useReportStore = defineStore('report', () => {
         currentReport.value = updated
       }
       return updated
-    } catch (e: any) {
-      error.value = e.message || '核發報告失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '核發報告失敗'
       throw e
     } finally {
       loading.value = false
@@ -82,8 +82,8 @@ export const useReportStore = defineStore('report', () => {
         currentReport.value = updated
       }
       return updated
-    } catch (e: any) {
-      error.value = e.message || '退回報告失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '退回報告失敗'
       throw e
     } finally {
       loading.value = false

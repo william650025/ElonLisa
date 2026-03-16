@@ -39,8 +39,8 @@ export const useTestItemStore = defineStore('testItem', () => {
     error.value = null
     try {
       testItems.value = await testItemService.getAll()
-    } catch (e: any) {
-      error.value = e.message || '載入檢驗項目失敗'
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : '載入檢驗項目失敗'
     } finally {
       loading.value = false
     }
