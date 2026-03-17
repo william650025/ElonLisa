@@ -13,6 +13,7 @@ const navItems = [
   { path: '/tech/dashboard', icon: 'fa-regular fa-grid-2', label: '儀表板' },
   { path: '/tech/worklist', icon: 'fa-regular fa-flask', label: '工作清單' },
   { path: '/tech/review', icon: 'fa-regular fa-file-lines', label: '報告審核' },
+  { path: '/tech/qc', icon: 'fa-regular fa-chart-simple', label: '品質管控' },
 ]
 
 const currentPath = computed(() => route.path)

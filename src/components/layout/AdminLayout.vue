@@ -12,6 +12,9 @@ const notifyStore = useNotificationStore()
 const navItems = [
   { path: '/admin/dashboard', icon: 'fa-regular fa-grid-2', label: '儀表板' },
   { path: '/admin/orders', icon: 'fa-regular fa-file-lines', label: '醫令管理' },
+  { path: '/admin/patients', icon: 'fa-regular fa-user-group', label: '病患管理' },
+  { path: '/admin/reports', icon: 'fa-regular fa-file-chart-column', label: '報告管理' },
+  { path: '/admin/settings', icon: 'fa-regular fa-gear', label: '系統設定' },
 ]
 
 const currentPath = computed(() => route.path)

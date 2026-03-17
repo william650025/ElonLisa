@@ -39,6 +39,13 @@ const techRoutes: RouteRecordRaw = {
       props: true,
     },
     {
+      path: 'reports/:id',
+      name: 'TechReportDetail',
+      component: () => import('@/views/tech/TechReportDetail.vue'),
+      meta: { title: '報告詳情' },
+      props: true,
+    },
+    {
       path: 'qc',
       name: 'QCDashboard',
       component: () => import('@/views/tech/QCDashboard.vue'),

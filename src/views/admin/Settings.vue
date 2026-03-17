@@ -4,9 +4,9 @@ import { ref } from 'vue'
 const activeSection = ref('tests')
 
 const sections = [
-  { key: 'tests', label: '檢驗項目管理', icon: '🧪' },
-  { key: 'users', label: '使用者管理', icon: '👤' },
-  { key: 'system', label: '系統參數', icon: '⚙️' },
+  { key: 'tests', label: '檢驗項目管理', iconClass: 'fa-regular fa-flask-vial' },
+  { key: 'users', label: '使用者管理', iconClass: 'fa-regular fa-users' },
+  { key: 'system', label: '系統參數', iconClass: 'fa-regular fa-sliders' },
 ]
 
 // Mock data
@@ -53,7 +53,7 @@ const systemParams = ref([
               : 'text-muji-text-light hover:bg-muji-bg/50',
           ]"
         >
-          <span class="mr-2">{{ s.icon }}</span>{{ s.label }}
+          <i :class="[s.iconClass, 'mr-2 text-xs w-4 text-center']"></i>{{ s.label }}
         </button>
       </nav>
 

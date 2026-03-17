@@ -45,6 +45,12 @@ const adminRoutes: RouteRecordRaw = {
       props: true,
     },
     {
+      path: 'reports',
+      name: 'AdminReportList',
+      component: () => import('@/views/admin/AdminReportList.vue'),
+      meta: { title: '報告管理' },
+    },
+    {
       path: 'settings',
       name: 'Settings',
       component: () => import('@/views/admin/Settings.vue'),
