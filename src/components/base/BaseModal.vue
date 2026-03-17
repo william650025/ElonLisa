@@ -1,8 +1,16 @@
 <script setup lang="ts">
+import {
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+  TransitionRoot,
+  TransitionChild,
+} from '@headlessui/vue'
+
 interface Props {
   show: boolean
   title?: string
-  maxWidth?: 'sm' | 'md' | 'lg'
+  maxWidth?: 'sm' | 'md' | 'lg' | 'xl'
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -17,67 +25,78 @@ const maxWidthClass: Record<string, string> = {
   sm: 'max-w-sm',
   md: 'max-w-md',
   lg: 'max-w-lg',
-}
-
-function onBackdropClick() {
-  emit('close')
+  xl: 'max-w-xl',
 }
 </script>
 
 <template>
-  <Teleport to="body">
-    <Transition
-      enter-active-class="transition-opacity duration-150 ease-out"
-      enter-from-class="opacity-0"
-      enter-to-class="opacity-100"
-      leave-active-class="transition-opacity duration-100 ease-in"
-      leave-from-class="opacity-100"
-      leave-to-class="opacity-0"
-    >
-      <div
-        v-if="props.show"
-        class="fixed inset-0 bg-muji-text/40 backdrop-blur-[2px] z-50 flex items-center justify-center p-4"
-        @click.self="onBackdropClick"
+  <TransitionRoot :show="props.show" as="template">
+    <Dialog class="relative z-50" @close="emit('close')">
+      <!-- Backdrop -->
+      <TransitionChild
+        as="template"
+        enter="ease-out duration-200"
+        enter-from="opacity-0"
+        enter-to="opacity-100"
+        leave="ease-in duration-150"
+        leave-from="opacity-100"
+        leave-to="opacity-0"
       >
-        <div
-          :class="[
-            'w-full bg-white rounded-sm border border-muji-border',
-            'shadow-lg animate-slide-up',
-            maxWidthClass[props.maxWidth],
-          ]"
-        >
-          <!-- Header -->
-          <div
-            v-if="props.title || $slots.header"
-            class="flex items-center justify-between px-6 py-4 border-b border-muji-border"
+        <div class="fixed inset-0 bg-muji-text/40 backdrop-blur-[2px]" />
+      </TransitionChild>
+
+      <!-- Panel -->
+      <div class="fixed inset-0 overflow-y-auto">
+        <div class="flex min-h-full items-center justify-center p-4">
+          <TransitionChild
+            as="template"
+            enter="ease-out duration-200"
+            enter-from="opacity-0 scale-95"
+            enter-to="opacity-100 scale-100"
+            leave="ease-in duration-150"
+            leave-from="opacity-100 scale-100"
+            leave-to="opacity-0 scale-95"
           >
-            <slot name="header">
-              <h3 class="text-base font-normal text-muji-text tracking-tight">
-                {{ props.title }}
-              </h3>
-            </slot>
-            <button
-              class="text-muji-linen hover:text-muji-charcoal transition-colors duration-150 p-1"
-              @click="emit('close')"
+            <DialogPanel
+              :class="[
+                'w-full bg-white rounded-sm border border-muji-border shadow-lg',
+                maxWidthClass[props.maxWidth],
+              ]"
             >
-              <i class="fa-regular fa-xmark text-base" />
-            </button>
-          </div>
+              <!-- Header -->
+              <div
+                v-if="props.title || $slots.header"
+                class="flex items-center justify-between px-6 py-4 border-b border-muji-border"
+              >
+                <slot name="header">
+                  <DialogTitle class="text-base font-normal text-muji-text tracking-tight">
+                    {{ props.title }}
+                  </DialogTitle>
+                </slot>
+                <button
+                  class="text-muji-linen hover:text-muji-charcoal transition-colors duration-150 p-1"
+                  @click="emit('close')"
+                >
+                  <i class="fa-regular fa-xmark text-base" />
+                </button>
+              </div>
 
-          <!-- Body -->
-          <div class="px-6 py-5">
-            <slot />
-          </div>
+              <!-- Body -->
+              <div class="px-6 py-5">
+                <slot />
+              </div>
 
-          <!-- Footer -->
-          <div
-            v-if="$slots.footer"
-            class="flex items-center justify-end gap-3 px-6 py-4 border-t border-muji-border"
-          >
-            <slot name="footer" />
-          </div>
+              <!-- Footer -->
+              <div
+                v-if="$slots.footer"
+                class="flex items-center justify-end gap-3 px-6 py-4 border-t border-muji-border"
+              >
+                <slot name="footer" />
+              </div>
+            </DialogPanel>
+          </TransitionChild>
         </div>
       </div>
-    </Transition>
-  </Teleport>
+    </Dialog>
+  </TransitionRoot>
 </template>
