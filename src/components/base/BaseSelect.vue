@@ -26,7 +26,9 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: '',
+  label: undefined,
   placeholder: '請選擇...',
+  error: undefined,
   disabled: false,
   required: false,
 })

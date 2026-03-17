@@ -7,6 +7,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   variant: 'info',
+  title: undefined,
   dismissible: false,
 })
 

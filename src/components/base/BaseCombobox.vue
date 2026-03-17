@@ -27,7 +27,9 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: '',
+  label: undefined,
   placeholder: '搜尋...',
+  error: undefined,
   disabled: false,
   required: false,
 })

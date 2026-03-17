@@ -9,6 +9,8 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  icon: undefined,
+  trend: undefined,
   trendDirection: 'neutral',
   critical: false,
 })

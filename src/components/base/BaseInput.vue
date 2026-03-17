@@ -12,7 +12,11 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: '',
+  label: undefined,
+  placeholder: undefined,
   type: 'text',
+  error: undefined,
+  hint: undefined,
   disabled: false,
   required: false,
 })

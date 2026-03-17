@@ -9,6 +9,8 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  label: undefined,
+  description: undefined,
   disabled: false,
 })
 

@@ -14,12 +14,8 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.2.0",
     "@headlessui/vue": "^1.7.23",
-    "@vueuse/core": "^14.2.1",
-    "chart.js": "^4.5.1",
-    "dayjs": "^1.11.20",
     "pinia": "^3.0.4",
     "vue": "^3.5.30",
-    "vue-chartjs": "^5.3.3",
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
