@@ -149,13 +149,13 @@ onMounted(async () => {
       <button
         v-for="tab in statusTabs"
         :key="tab.value"
-        @click="statusFilter = tab.value"
         :class="[
           'px-4 py-2.5 text-sm transition-colors duration-150 border-b-2 -mb-px',
           statusFilter === tab.value
             ? 'text-muji-text border-muji-charcoal font-medium'
             : 'text-muji-text-light border-transparent hover:text-muji-text'
         ]"
+        @click="statusFilter = tab.value"
       >
         {{ tab.label }}
       </button>

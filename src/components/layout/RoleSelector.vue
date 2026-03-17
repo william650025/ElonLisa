@@ -52,13 +52,13 @@ function selectRole(role: typeof roles[0]) {
       <button
         v-for="role in roles"
         :key="role.key"
-        @click="selectRole(role)"
         class="w-44 h-56 flex flex-col items-center justify-center gap-4
                bg-muji-cream border border-muji-border rounded-sm
                transition-all duration-200 ease-in-out
                hover:border-muji-linen hover:-translate-y-0.5 hover:shadow-sm
                active:scale-[0.98]
                focus:outline-none focus:ring-2 focus:ring-muji-charcoal focus:ring-offset-2 focus:ring-offset-muji-white"
+        @click="selectRole(role)"
       >
         <i :class="[role.icon, 'text-2xl text-muji-charcoal']"></i>
         <div class="text-center">

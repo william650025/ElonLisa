@@ -127,8 +127,8 @@ async function submitOrder() {
     <!-- 頁面標題 -->
     <div>
       <button
-        @click="router.push({ name: 'OrderList' })"
         class="text-sm text-muji-text-light hover:text-muji-text transition-colors mb-2 inline-flex items-center gap-1"
+        @click="router.push({ name: 'OrderList' })"
       >
         <i class="fa-regular fa-arrow-left text-xs"></i>
         返回醫令清單
@@ -169,7 +169,6 @@ async function submitOrder() {
 
     <!-- Step Content -->
     <div class="bg-white rounded-sm border border-muji-border shadow-sm p-8">
-
       <!-- Step 1: 選擇病患 -->
       <div v-if="currentStep === 1" class="space-y-6">
         <h2 class="text-xl font-light text-muji-text tracking-tight">選擇病患</h2>
@@ -193,13 +192,13 @@ async function submitOrder() {
           <div
             v-for="patient in filteredPatients"
             :key="patient.id"
-            @click="selectPatient(patient)"
             :class="[
               'flex items-center gap-4 p-4 rounded-sm border cursor-pointer transition-all duration-150',
               selectedPatient?.id === patient.id
                 ? 'border-muji-charcoal bg-muji-cream border-l-4'
                 : 'border-muji-border hover:bg-muji-white border-l-4 border-l-transparent'
             ]"
+            @click="selectPatient(patient)"
           >
             <div class="w-10 h-10 rounded-sm bg-muji-cream flex items-center justify-center flex-shrink-0">
               <i class="fa-regular fa-user text-sm text-muji-text-light"></i>
@@ -225,7 +224,7 @@ async function submitOrder() {
           <h2 class="text-xl font-light text-muji-text tracking-tight">選擇檢驗項目</h2>
           <div class="text-sm text-muji-text-light">
             已選病患：<span class="text-muji-text font-medium">{{ selectedPatient?.name }}</span>
-            <button @click="currentStep = 1" class="ml-2 text-xs text-muji-text-light hover:text-muji-text">[變更]</button>
+            <button class="ml-2 text-xs text-muji-text-light hover:text-muji-text" @click="currentStep = 1">[變更]</button>
           </div>
         </div>
 
@@ -249,13 +248,13 @@ async function submitOrder() {
           <button
             v-for="cat in testItemStore.categories"
             :key="cat"
-            @click="testItemStore.categoryFilter = cat"
             :class="[
               'px-3 py-1.5 text-xs rounded-sm border transition-colors duration-150',
               testItemStore.categoryFilter === cat
                 ? 'bg-muji-charcoal text-muji-white border-muji-charcoal'
                 : 'bg-white text-muji-text-light border-muji-border hover:border-muji-linen'
             ]"
+            @click="testItemStore.categoryFilter = cat"
           >
             {{ cat === 'all' ? '全部' : cat }}
           </button>
@@ -271,8 +270,8 @@ async function submitOrder() {
             <input
               type="checkbox"
               :checked="selectedTestItemIds.includes(item.id)"
-              @change="toggleTestItem(item.id)"
               class="w-4 h-4 rounded-sm border-muji-border text-muji-charcoal focus:ring-muji-charcoal"
+              @change="toggleTestItem(item.id)"
             />
             <div class="flex-1 min-w-0">
               <p class="text-sm text-muji-text">
@@ -300,11 +299,11 @@ async function submitOrder() {
           </label>
           <div class="flex items-center gap-6">
             <label class="flex items-center gap-2 cursor-pointer">
-              <input type="radio" :value="false" v-model="isUrgent" class="text-muji-charcoal focus:ring-muji-charcoal" />
+              <input v-model="isUrgent" type="radio" :value="false" class="text-muji-charcoal focus:ring-muji-charcoal" />
               <span class="text-sm text-muji-text">一般</span>
             </label>
             <label class="flex items-center gap-2 cursor-pointer">
-              <input type="radio" :value="true" v-model="isUrgent" class="text-muji-charcoal focus:ring-muji-charcoal" />
+              <input v-model="isUrgent" type="radio" :value="true" class="text-muji-charcoal focus:ring-muji-charcoal" />
               <span class="text-sm text-muji-text">緊急</span>
             </label>
           </div>
@@ -386,7 +385,6 @@ async function submitOrder() {
     <div class="flex items-center justify-between">
       <button
         v-if="currentStep > 1"
-        @click="prevStep"
         class="inline-flex items-center gap-2 px-5 py-2.5
                bg-transparent text-muji-charcoal
                text-sm font-medium tracking-wide
@@ -394,6 +392,7 @@ async function submitOrder() {
                transition-all duration-200
                hover:bg-muji-cream hover:border-muji-linen
                active:scale-[0.98]"
+        @click="prevStep"
       >
         <i class="fa-regular fa-arrow-left text-xs"></i>
         上一步
@@ -402,7 +401,6 @@ async function submitOrder() {
 
       <button
         v-if="currentStep < totalSteps"
-        @click="nextStep"
         :disabled="!canGoNext"
         class="inline-flex items-center gap-2 px-5 py-2.5
                bg-muji-charcoal text-muji-white
@@ -412,6 +410,7 @@ async function submitOrder() {
                hover:bg-muji-text hover:border-muji-text
                active:scale-[0.98]
                disabled:opacity-40 disabled:cursor-not-allowed"
+        @click="nextStep"
       >
         下一步
         <i class="fa-regular fa-arrow-right text-xs"></i>
@@ -419,7 +418,6 @@ async function submitOrder() {
 
       <button
         v-if="currentStep === totalSteps"
-        @click="openConfirm"
         class="inline-flex items-center gap-2 px-5 py-2.5
                bg-muji-charcoal text-muji-white
                text-sm font-medium tracking-wide
@@ -427,6 +425,7 @@ async function submitOrder() {
                transition-all duration-200
                hover:bg-muji-text hover:border-muji-text
                active:scale-[0.98]"
+        @click="openConfirm"
       >
         <i class="fa-regular fa-circle-check text-xs"></i>
         送出醫令
@@ -443,7 +442,7 @@ async function submitOrder() {
         <div class="w-full max-w-md bg-white rounded-sm border border-muji-border shadow-lg">
           <div class="flex items-center justify-between px-6 py-4 border-b border-muji-border">
             <h3 class="text-base font-normal text-muji-text tracking-tight">確認送出醫令</h3>
-            <button @click="showConfirmModal = false" class="text-muji-linen hover:text-muji-charcoal transition-colors p-1">
+            <button class="text-muji-linen hover:text-muji-charcoal transition-colors p-1" @click="showConfirmModal = false">
               <i class="fa-regular fa-xmark text-base"></i>
             </button>
           </div>
@@ -454,18 +453,18 @@ async function submitOrder() {
           </div>
           <div class="flex items-center justify-end gap-3 px-6 py-4 border-t border-muji-border">
             <button
-              @click="showConfirmModal = false"
               class="px-4 py-2 text-sm text-muji-charcoal border border-muji-border rounded-sm
                      hover:bg-muji-cream transition-colors duration-150"
+              @click="showConfirmModal = false"
             >
               取消
             </button>
             <button
-              @click="submitOrder"
               :disabled="isSubmitting"
               class="px-4 py-2 text-sm text-muji-white bg-muji-charcoal rounded-sm
                      hover:bg-muji-text transition-colors duration-150
                      disabled:opacity-40 disabled:cursor-not-allowed"
+              @click="submitOrder"
             >
               {{ isSubmitting ? '送出中...' : '確認送出' }}
             </button>

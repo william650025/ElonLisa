@@ -120,8 +120,8 @@ onMounted(async () => {
     <div class="flex items-center justify-between">
       <div>
         <button
-          @click="router.push({ name: 'ReportList' })"
           class="text-sm text-muji-text-light hover:text-muji-text transition-colors mb-2 inline-flex items-center gap-1"
+          @click="router.push({ name: 'ReportList' })"
         >
           <i class="fa-regular fa-arrow-left text-xs"></i>
           返回報告列表
@@ -216,11 +216,11 @@ onMounted(async () => {
               </td>
               <td class="px-6 py-3.5 text-center">
                 <button
-                  @click.stop="toggleTrend(result.testItemId)"
                   :class="[
                     'text-xs transition-colors',
                     selectedTrendItem === result.testItemId ? 'text-muji-text' : 'text-muji-text-light hover:text-muji-text'
                   ]"
+                  @click.stop="toggleTrend(result.testItemId)"
                 >
                   <i class="fa-regular fa-chart-line"></i>
                 </button>
@@ -245,8 +245,8 @@ onMounted(async () => {
             歷史趨勢 — {{ getTestItemName(selectedTrendItem) }}
           </h2>
           <button
-            @click="showTrendChart = false"
             class="text-muji-text-light hover:text-muji-text transition-colors"
+            @click="showTrendChart = false"
           >
             <i class="fa-regular fa-xmark text-sm"></i>
           </button>

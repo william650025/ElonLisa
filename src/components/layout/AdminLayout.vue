@@ -72,7 +72,7 @@ function logout() {
             <p class="text-xs font-medium text-muji-text truncate">{{ authStore.currentUser?.displayName }}</p>
             <p class="text-2xs text-muji-text-light truncate">{{ authStore.roleDisplayName }}</p>
           </div>
-          <button @click="logout" class="text-muji-linen hover:text-muji-charcoal transition-colors p-1">
+          <button class="text-muji-linen hover:text-muji-charcoal transition-colors p-1" @click="logout">
             <i class="fa-regular fa-arrow-right-from-bracket text-xs"></i>
           </button>
         </div>
@@ -111,7 +111,7 @@ function logout() {
         ]"
       >
         <p class="text-sm text-muji-text flex-1">{{ toast.message }}</p>
-        <button @click="notifyStore.removeToast(toast.id)" class="text-muji-linen hover:text-muji-text flex-shrink-0">
+        <button class="text-muji-linen hover:text-muji-text flex-shrink-0" @click="notifyStore.removeToast(toast.id)">
           <i class="fa-regular fa-xmark text-xs"></i>
         </button>
       </div>

@@ -62,8 +62,8 @@ onMounted(async () => {
     <!-- Header -->
     <div>
       <button
-        @click="router.push({ name: 'OrderList' })"
         class="text-sm text-muji-text-light hover:text-muji-text transition-colors mb-2 inline-flex items-center gap-1"
+        @click="router.push({ name: 'OrderList' })"
       >
         <i class="fa-regular fa-arrow-left text-xs"></i>
         返回醫令清單

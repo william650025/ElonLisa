@@ -103,8 +103,8 @@ onMounted(async () => {
     <!-- Header -->
     <div>
       <button
-        @click="router.push({ name: 'ReviewList' })"
         class="text-sm text-muji-text-light hover:text-muji-text transition-colors mb-2 inline-flex items-center gap-1"
+        @click="router.push({ name: 'ReviewList' })"
       >
         <i class="fa-regular fa-arrow-left text-xs"></i>
         返回待核發清單
@@ -170,7 +170,6 @@ onMounted(async () => {
       <!-- Actions -->
       <div class="flex items-center justify-end gap-4">
         <button
-          @click="router.push({ name: 'ReviewList' })"
           class="inline-flex items-center gap-2 px-5 py-2.5
                  bg-transparent text-muji-charcoal
                  text-sm font-medium tracking-wide
@@ -178,12 +177,12 @@ onMounted(async () => {
                  transition-all duration-200
                  hover:bg-muji-cream hover:border-muji-linen
                  active:scale-[0.98]"
+          @click="router.push({ name: 'ReviewList' })"
         >
           <i class="fa-regular fa-rotate-left text-xs"></i>
           退回重新輸入
         </button>
         <button
-          @click="showApproveModal = true"
           :disabled="report.status !== 'draft'"
           class="inline-flex items-center gap-2 px-5 py-2.5
                  bg-muji-charcoal text-muji-white
@@ -193,6 +192,7 @@ onMounted(async () => {
                  hover:bg-muji-text hover:border-muji-text
                  active:scale-[0.98]
                  disabled:opacity-40 disabled:cursor-not-allowed"
+          @click="showApproveModal = true"
         >
           <i class="fa-regular fa-circle-check text-xs"></i>
           核發報告
@@ -210,7 +210,7 @@ onMounted(async () => {
         <div class="w-full max-w-md bg-white rounded-sm border border-muji-border shadow-lg">
           <div class="flex items-center justify-between px-6 py-4 border-b border-muji-border">
             <h3 class="text-base font-normal text-muji-text tracking-tight">確認核發報告？</h3>
-            <button @click="showApproveModal = false" class="text-muji-linen hover:text-muji-charcoal transition-colors p-1">
+            <button class="text-muji-linen hover:text-muji-charcoal transition-colors p-1" @click="showApproveModal = false">
               <i class="fa-regular fa-xmark text-base"></i>
             </button>
           </div>
@@ -221,18 +221,18 @@ onMounted(async () => {
           </div>
           <div class="flex items-center justify-end gap-3 px-6 py-4 border-t border-muji-border">
             <button
-              @click="showApproveModal = false"
               class="px-4 py-2 text-sm text-muji-charcoal border border-muji-border rounded-sm
                      hover:bg-muji-cream transition-colors duration-150"
+              @click="showApproveModal = false"
             >
               取消
             </button>
             <button
-              @click="approveReport"
               :disabled="isProcessing"
               class="px-4 py-2 text-sm text-muji-white bg-muji-charcoal rounded-sm
                      hover:bg-muji-text transition-colors duration-150
                      disabled:opacity-40 disabled:cursor-not-allowed"
+              @click="approveReport"
             >
               {{ isProcessing ? '核發中...' : '確認核發' }}
             </button>

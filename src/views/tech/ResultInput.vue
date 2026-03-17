@@ -151,8 +151,8 @@ watch(testItems, () => {
     <!-- Header -->
     <div>
       <button
-        @click="router.push({ name: 'Worklist' })"
         class="text-sm text-muji-text-light hover:text-muji-text transition-colors mb-2 inline-flex items-center gap-1"
+        @click="router.push({ name: 'Worklist' })"
       >
         <i class="fa-regular fa-arrow-left text-xs"></i>
         返回工作清單
@@ -193,8 +193,8 @@ watch(testItems, () => {
           <p class="text-sm text-muji-red/80 leading-relaxed">{{ criticalAlertMessage }}</p>
         </div>
         <button
-          @click="showCriticalAlert = false"
           class="text-muji-red/40 hover:text-muji-red flex-shrink-0"
+          @click="showCriticalAlert = false"
         >
           <i class="fa-regular fa-xmark text-sm"></i>
         </button>
@@ -225,13 +225,13 @@ watch(testItems, () => {
               <td class="px-6 py-4">
                 <input
                   v-model="entry.value"
-                  @input="checkValue(entry, testItems[index])"
                   type="text"
                   placeholder="輸入值"
                   :class="[
                     'w-full px-3 py-2 text-sm rounded-sm border transition-all duration-200 focus:outline-none focus:ring-1',
                     getInputBorderClass(entry.flag)
                   ]"
+                  @input="checkValue(entry, testItems[index])"
                 />
               </td>
               <td class="px-6 py-4 text-muji-text-light">{{ testItems[index]?.unit || '—' }}</td>
@@ -268,14 +268,13 @@ watch(testItems, () => {
       <!-- Actions -->
       <div class="flex items-center justify-end gap-3">
         <button
-          @click="router.push({ name: 'Worklist' })"
           class="px-5 py-2.5 text-sm text-muji-charcoal border border-muji-border rounded-sm
                  hover:bg-muji-cream transition-colors duration-150"
+          @click="router.push({ name: 'Worklist' })"
         >
           儲存草稿
         </button>
         <button
-          @click="saveResults"
           :disabled="isSaving"
           class="inline-flex items-center gap-2 px-5 py-2.5
                  bg-muji-charcoal text-muji-white
@@ -285,6 +284,7 @@ watch(testItems, () => {
                  hover:bg-muji-text hover:border-muji-text
                  active:scale-[0.98]
                  disabled:opacity-40 disabled:cursor-not-allowed"
+          @click="saveResults"
         >
           <i class="fa-regular fa-circle-check text-xs"></i>
           {{ isSaving ? '送出中...' : '送審' }}

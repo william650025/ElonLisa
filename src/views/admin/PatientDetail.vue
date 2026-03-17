@@ -62,8 +62,8 @@ onMounted(async () => {
   <div class="p-8 space-y-8">
     <!-- Back -->
     <button
-      @click="goBack"
       class="text-sm text-muji-text-light hover:text-muji-text transition-colors"
+      @click="goBack"
     >
       ← 返回病患列表
     </button>

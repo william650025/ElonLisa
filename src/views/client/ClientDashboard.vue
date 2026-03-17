@@ -62,8 +62,8 @@ onMounted(async () => {
           {{ publishedReports.length }}
         </div>
         <button
-          @click="router.push({ name: 'ReportList' })"
           class="text-xs text-muji-text-light hover:text-muji-text transition-colors"
+          @click="router.push({ name: 'ReportList' })"
         >
           查看所有報告 <i class="fa-regular fa-arrow-right text-[10px] ml-0.5"></i>
         </button>
@@ -86,8 +86,8 @@ onMounted(async () => {
       <div class="flex items-center justify-between px-6 py-4 border-b border-muji-border">
         <h2 class="text-lg font-light text-muji-text tracking-tight">我的最新檢驗報告</h2>
         <button
-          @click="router.push({ name: 'ReportList' })"
           class="text-sm text-muji-text-light hover:text-muji-text transition-colors"
+          @click="router.push({ name: 'ReportList' })"
         >
           查看全部 <i class="fa-regular fa-arrow-right text-xs ml-1"></i>
         </button>
@@ -102,8 +102,8 @@ onMounted(async () => {
         <div
           v-for="report in latestReports"
           :key="report.id"
-          @click="router.push({ name: 'ReportDetail', params: { id: report.id } })"
           class="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-muji-white transition-colors duration-150"
+          @click="router.push({ name: 'ReportDetail', params: { id: report.id } })"
         >
           <div>
             <p class="text-sm text-muji-text font-medium">{{ report.reportNumber }}</p>

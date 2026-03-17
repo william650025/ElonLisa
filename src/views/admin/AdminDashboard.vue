@@ -96,7 +96,6 @@ function goToOrderDetail(id: string) {
       <div class="flex items-center justify-between px-6 py-4 border-b border-muji-border">
         <h2 class="text-lg font-light text-muji-text tracking-tight">近期醫令</h2>
         <button
-          @click="goToCreateOrder"
           class="inline-flex items-center gap-2 px-5 py-2.5
                  bg-muji-charcoal text-muji-white
                  text-sm font-medium tracking-wide
@@ -104,6 +103,7 @@ function goToOrderDetail(id: string) {
                  transition-all duration-200 ease-in-out
                  hover:bg-muji-text hover:border-muji-text
                  active:scale-[0.98]"
+          @click="goToCreateOrder"
         >
           <i class="fa-regular fa-plus text-xs"></i>
           新增醫令
@@ -131,8 +131,8 @@ function goToOrderDetail(id: string) {
             <tr
               v-for="order in orderStore.orders.slice(0, 5)"
               :key="order.id"
-              @click="goToOrderDetail(order.id)"
               class="transition-colors duration-150 hover:bg-muji-white cursor-pointer"
+              @click="goToOrderDetail(order.id)"
             >
               <td class="px-6 py-3.5 text-muji-text font-normal">{{ order.orderNumber }}</td>
               <td class="px-6 py-3.5 text-muji-text">{{ getPatientName(order.patientId) }}</td>
@@ -166,8 +166,8 @@ function goToOrderDetail(id: string) {
       <!-- 查看全部 -->
       <div v-if="orderStore.orders.length > 5" class="px-6 py-4 border-t border-muji-border text-right">
         <button
-          @click="goToOrders"
           class="text-sm text-muji-text-light hover:text-muji-text transition-colors duration-150"
+          @click="goToOrders"
         >
           查看全部醫令 <i class="fa-regular fa-arrow-right text-xs ml-1"></i>
         </button>

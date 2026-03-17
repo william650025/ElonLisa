@@ -71,8 +71,8 @@ onMounted(async () => {
         </div>
         <div class="text-[28px] font-light text-muji-text tracking-tight leading-none mb-2">{{ pendingCount }}</div>
         <button
-          @click="router.push({ name: 'Worklist' })"
           class="text-xs text-muji-text-light hover:text-muji-text transition-colors"
+          @click="router.push({ name: 'Worklist' })"
         >
           查看工作清單 <i class="fa-regular fa-arrow-right text-[10px] ml-0.5"></i>
         </button>
@@ -107,8 +107,8 @@ onMounted(async () => {
       <div class="flex items-center justify-between px-6 py-4 border-b border-muji-border">
         <h2 class="text-lg font-light text-muji-text tracking-tight">今日優先處理</h2>
         <button
-          @click="router.push({ name: 'Worklist' })"
           class="text-sm text-muji-text-light hover:text-muji-text transition-colors"
+          @click="router.push({ name: 'Worklist' })"
         >
           查看全部 <i class="fa-regular fa-arrow-right text-xs ml-1"></i>
         </button>
@@ -123,11 +123,11 @@ onMounted(async () => {
         <div
           v-for="order in priorityQueue"
           :key="order.id"
-          @click="router.push({ name: 'ResultInput', params: { id: order.id } })"
           :class="[
             'flex items-center gap-4 px-6 py-4 cursor-pointer transition-colors duration-150',
             order.isUrgent ? 'bg-[#FDF1F1]/30 hover:bg-[#FDF1F1]/60' : 'hover:bg-muji-white'
           ]"
+          @click="router.push({ name: 'ResultInput', params: { id: order.id } })"
         >
           <div v-if="order.isUrgent" class="flex-shrink-0">
             <i class="fa-regular fa-flag text-muji-red text-sm"></i>
@@ -156,8 +156,8 @@ onMounted(async () => {
       <div class="flex items-center justify-between px-6 py-4 border-b border-muji-border">
         <h2 class="text-lg font-light text-muji-text tracking-tight">報告審核概況</h2>
         <button
-          @click="router.push({ name: 'ReviewList' })"
           class="text-sm text-muji-text-light hover:text-muji-text transition-colors"
+          @click="router.push({ name: 'ReviewList' })"
         >
           查看全部 <i class="fa-regular fa-arrow-right text-xs ml-1"></i>
         </button>

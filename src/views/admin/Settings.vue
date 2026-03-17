@@ -45,13 +45,13 @@ const systemParams = ref([
         <button
           v-for="s in sections"
           :key="s.key"
-          @click="activeSection = s.key"
           :class="[
             'w-full text-left px-4 py-2.5 text-sm rounded-sm transition-colors',
             activeSection === s.key
               ? 'bg-muji-bg text-muji-text font-medium'
               : 'text-muji-text-light hover:bg-muji-bg/50',
           ]"
+          @click="activeSection = s.key"
         >
           <i :class="[s.iconClass, 'mr-2 text-xs w-4 text-center']"></i>{{ s.label }}
         </button>

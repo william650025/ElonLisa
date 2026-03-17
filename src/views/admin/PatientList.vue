@@ -65,8 +65,8 @@ onMounted(async () => {
           <tr
             v-for="patient in patients"
             :key="patient.id"
-            @click="goToDetail(patient.id)"
             class="border-b border-muji-border last:border-b-0 hover:bg-muji-bg/50 transition-colors cursor-pointer"
+            @click="goToDetail(patient.id)"
           >
             <td class="px-5 py-3 font-mono text-xs text-muji-text">{{ patient.medicalRecordNumber }}</td>
             <td class="px-5 py-3 text-muji-text">{{ patient.name }}</td>

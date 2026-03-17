@@ -109,8 +109,8 @@ onMounted(async () => {
     <div class="flex items-center justify-between">
       <div>
         <button
-          @click="router.push({ name: 'ReviewList' })"
           class="text-sm text-muji-text-light hover:text-muji-text transition-colors mb-2 inline-flex items-center gap-1"
+          @click="router.push({ name: 'ReviewList' })"
         >
           <i class="fa-regular fa-arrow-left text-xs"></i>
           返回報告審核

@@ -105,8 +105,8 @@ onMounted(async () => {
           <tr
             v-for="report in filteredReports"
             :key="report.id"
-            @click="router.push({ name: 'ReportDetail', params: { id: report.id } })"
             class="hover:bg-muji-white transition-colors duration-150 cursor-pointer"
+            @click="router.push({ name: 'ReportDetail', params: { id: report.id } })"
           >
             <td class="px-6 py-3.5 text-muji-text">{{ formatDate(report.createdAt) }}</td>
             <td class="px-6 py-3.5 text-muji-text font-normal">{{ report.reportNumber }}</td>

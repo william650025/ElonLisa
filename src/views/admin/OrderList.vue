@@ -72,7 +72,6 @@ function goToOrderDetail(id: string) {
         <p class="text-sm text-muji-text-light mt-1">管理所有檢驗醫令。</p>
       </div>
       <button
-        @click="goToCreateOrder"
         class="inline-flex items-center gap-2 px-5 py-2.5
                bg-muji-charcoal text-muji-white
                text-sm font-medium tracking-wide
@@ -80,6 +79,7 @@ function goToOrderDetail(id: string) {
                transition-all duration-200 ease-in-out
                hover:bg-muji-text hover:border-muji-text
                active:scale-[0.98]"
+        @click="goToCreateOrder"
       >
         <i class="fa-regular fa-plus text-xs"></i>
         新增醫令
@@ -110,13 +110,13 @@ function goToOrderDetail(id: string) {
       <button
         v-for="tab in statusTabs"
         :key="tab.value"
-        @click="orderStore.statusFilter = tab.value"
         :class="[
           'px-4 py-2.5 text-sm transition-colors duration-150 border-b-2 -mb-px',
           orderStore.statusFilter === tab.value
             ? 'text-muji-text border-muji-charcoal font-medium'
             : 'text-muji-text-light border-transparent hover:text-muji-text hover:border-muji-linen'
         ]"
+        @click="orderStore.statusFilter = tab.value"
       >
         {{ tab.label }}
         <span
@@ -150,11 +150,11 @@ function goToOrderDetail(id: string) {
           <tr
             v-for="order in orderStore.filteredOrders"
             :key="order.id"
-            @click="goToOrderDetail(order.id)"
             :class="[
               'transition-colors duration-150 cursor-pointer',
               order.isUrgent && order.status === 'pending' ? 'bg-[#FDF1F1]/30' : 'hover:bg-muji-white'
             ]"
+            @click="goToOrderDetail(order.id)"
           >
             <td class="px-6 py-3.5 text-muji-text font-normal">{{ order.orderNumber }}</td>
             <td class="px-6 py-3.5 text-muji-text">{{ getPatientName(order.patientId) }}</td>
