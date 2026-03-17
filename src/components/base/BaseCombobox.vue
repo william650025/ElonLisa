@@ -83,7 +83,7 @@ const selectedOption = computed(() =>
           @change="query = $event.target.value"
         />
         <ComboboxButton class="absolute inset-y-0 right-0 flex items-center pr-3">
-          <i class="fa-regular fa-chevron-down text-xs text-muji-linen" />
+          <i class="fa-solid fa-chevron-down text-xs text-muji-linen" />
         </ComboboxButton>
 
         <transition
@@ -122,7 +122,7 @@ const selectedOption = computed(() =>
                   v-if="selected"
                   class="absolute inset-y-0 right-0 flex items-center pr-3 text-muji-charcoal"
                 >
-                  <i class="fa-regular fa-check text-xs" />
+                  <i class="fa-solid fa-check text-xs" />
                 </span>
               </li>
             </ComboboxOption>

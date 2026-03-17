@@ -38,7 +38,7 @@ defineEmits<{
           <span v-else :class="i === props.breadcrumbs.length - 1 ? 'text-muji-charcoal' : ''">
             {{ crumb.label }}
           </span>
-          <i v-if="i < props.breadcrumbs.length - 1" class="fa-regular fa-chevron-right text-[9px]" />
+          <i v-if="i < props.breadcrumbs.length - 1" class="fa-solid fa-chevron-right text-[9px]" />
         </template>
       </div>
     </div>
@@ -51,7 +51,7 @@ defineEmits<{
       <button
         class="relative w-9 h-9 flex items-center justify-center text-muji-text-light hover:text-muji-text hover:bg-muji-white rounded-sm transition-all duration-150"
       >
-        <i class="fa-regular fa-bell text-sm" />
+        <i class="fa-solid fa-bell text-sm" />
       </button>
     </div>
   </header>

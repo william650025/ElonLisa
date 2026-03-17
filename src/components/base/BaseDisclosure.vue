@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
       <span class="font-medium">{{ props.title }}</span>
       <i
         :class="[
-          'fa-regular fa-chevron-down text-xs text-muji-text-light transition-transform duration-200',
+          'fa-solid fa-chevron-down text-xs text-muji-text-light transition-transform duration-200',
           open && 'rotate-180',
         ]"
       />

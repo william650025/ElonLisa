@@ -102,7 +102,7 @@ onMounted(async () => {
     <!-- Search & Filter -->
     <div class="flex items-center gap-4">
       <div class="relative flex-1 max-w-md">
-        <i class="fa-regular fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs text-muji-linen"></i>
+        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs text-muji-linen"></i>
         <input
           v-model="reportStore.searchQuery"
           type="text"
@@ -130,7 +130,7 @@ onMounted(async () => {
     <!-- Table -->
     <div class="bg-white rounded-sm border border-muji-border shadow-sm overflow-hidden">
       <div v-if="reportStore.loading" class="px-6 py-12 text-center">
-        <i class="fa-regular fa-spinner fa-spin text-muji-linen text-lg"></i>
+        <i class="fa-solid fa-spinner fa-spin text-muji-linen text-lg"></i>
         <p class="text-sm text-muji-text-light mt-2">資料正在載入中...</p>
       </div>
 
@@ -167,7 +167,7 @@ onMounted(async () => {
       </table>
 
       <div v-else class="px-6 py-12 text-center">
-        <i class="fa-regular fa-file-lines text-muji-linen text-2xl block mb-3"></i>
+        <i class="fa-solid fa-file-lines text-muji-linen text-2xl block mb-3"></i>
         <p class="text-sm text-muji-text-light">沒有可顯示的報告。</p>
         <p class="text-xs text-muji-linen mt-1">請嘗試其他關鍵字或調整篩選條件。</p>
       </div>

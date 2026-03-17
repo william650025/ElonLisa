@@ -120,7 +120,7 @@ onMounted(async () => {
     <!-- Search & Filter -->
     <div class="flex items-center gap-4">
       <div class="relative flex-1 max-w-md">
-        <i class="fa-regular fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs text-muji-linen"></i>
+        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs text-muji-linen"></i>
         <input
           v-model="searchQuery"
           type="text"
@@ -164,7 +164,7 @@ onMounted(async () => {
     <!-- Table -->
     <div class="bg-white rounded-sm border border-muji-border shadow-sm overflow-hidden">
       <div v-if="orderStore.loading" class="px-6 py-12 text-center">
-        <i class="fa-regular fa-spinner fa-spin text-muji-linen text-lg"></i>
+        <i class="fa-solid fa-spinner fa-spin text-muji-linen text-lg"></i>
         <p class="text-sm text-muji-text-light mt-2">資料正在載入中...</p>
       </div>
 
@@ -193,7 +193,7 @@ onMounted(async () => {
             <td class="px-6 py-3.5 text-muji-text">{{ getPatientName(order.patientId) }}</td>
             <td class="px-6 py-3.5">
               <span v-if="order.isUrgent" class="inline-flex items-center gap-1 text-muji-red text-xs font-medium">
-                <i class="fa-regular fa-flag text-[10px]"></i>
+                <i class="fa-solid fa-flag text-[10px]"></i>
                 STAT
               </span>
               <span v-else class="text-muji-text-light text-xs">Routine</span>
@@ -215,7 +215,7 @@ onMounted(async () => {
       </table>
 
       <div v-else class="px-6 py-12 text-center">
-        <i class="fa-regular fa-flask text-muji-linen text-2xl block mb-3"></i>
+        <i class="fa-solid fa-flask text-muji-linen text-2xl block mb-3"></i>
         <p class="text-sm text-muji-text-light">沒有檢驗結果等待輸入。</p>
       </div>
     </div>

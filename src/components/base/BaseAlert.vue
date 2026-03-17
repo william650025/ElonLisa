@@ -20,25 +20,25 @@ const variantStyles: Record<string, { bg: string; border: string; text: string; 
     bg: 'bg-info-bg',
     border: 'border-info/20',
     text: 'text-info',
-    icon: 'fa-regular fa-circle-info',
+    icon: 'fa-solid fa-circle-info',
   },
   success: {
     bg: 'bg-success-bg',
     border: 'border-success/20',
     text: 'text-success',
-    icon: 'fa-regular fa-circle-check',
+    icon: 'fa-solid fa-circle-check',
   },
   warning: {
     bg: 'bg-warning-bg',
     border: 'border-warning/20',
     text: 'text-warning',
-    icon: 'fa-regular fa-triangle-exclamation',
+    icon: 'fa-solid fa-triangle-exclamation',
   },
   critical: {
     bg: 'bg-critical-bg',
     border: 'border-critical/30',
     text: 'text-critical',
-    icon: 'fa-regular fa-circle-exclamation',
+    icon: 'fa-solid fa-circle-exclamation',
   },
 }
 </script>
@@ -79,7 +79,7 @@ const variantStyles: Record<string, { bg: string; border: string; text: string; 
       :class="[`${variantStyles[props.variant].text}/50`, `hover:${variantStyles[props.variant].text}`, 'flex-shrink-0']"
       @click="emit('dismiss')"
     >
-      <i class="fa-regular fa-xmark text-sm" />
+      <i class="fa-solid fa-xmark text-sm" />
     </button>
   </div>
 </template>

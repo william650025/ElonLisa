@@ -74,7 +74,7 @@ onMounted(async () => {
           class="text-xs text-muji-text-light hover:text-muji-text transition-colors"
           @click="router.push({ name: 'Worklist' })"
         >
-          查看工作清單 <i class="fa-regular fa-arrow-right text-[10px] ml-0.5"></i>
+          查看工作清單 <i class="fa-solid fa-arrow-right text-[10px] ml-0.5"></i>
         </button>
       </div>
 
@@ -82,7 +82,7 @@ onMounted(async () => {
       <div class="bg-white rounded-sm border border-muji-border shadow-sm p-6">
         <div class="flex items-center justify-between mb-4">
           <span class="text-2xs font-medium tracking-widest uppercase text-muji-text-light">進行中</span>
-          <i class="fa-regular fa-flask text-muji-linen text-base"></i>
+          <i class="fa-solid fa-flask text-muji-linen text-base"></i>
         </div>
         <div class="text-[28px] font-light text-muji-text tracking-tight leading-none mb-2">{{ inProgressCount }}</div>
         <span class="text-xs text-muji-text-light">正在檢驗中</span>
@@ -93,7 +93,7 @@ onMounted(async () => {
            :class="criticalCount > 0 ? 'border-muji-red/30' : ''">
         <div class="flex items-center justify-between mb-4">
           <span class="text-2xs font-medium tracking-widest uppercase text-muji-text-light">緊急警示</span>
-          <i class="fa-regular fa-triangle-exclamation text-muji-red text-base"></i>
+          <i class="fa-solid fa-triangle-exclamation text-muji-red text-base"></i>
         </div>
         <div :class="['text-[28px] font-light tracking-tight leading-none mb-2', criticalCount > 0 ? 'text-muji-red' : 'text-muji-text']">
           {{ criticalCount }}
@@ -110,12 +110,12 @@ onMounted(async () => {
           class="text-sm text-muji-text-light hover:text-muji-text transition-colors"
           @click="router.push({ name: 'Worklist' })"
         >
-          查看全部 <i class="fa-regular fa-arrow-right text-xs ml-1"></i>
+          查看全部 <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
         </button>
       </div>
 
       <div v-if="orderStore.loading" class="px-6 py-12 text-center">
-        <i class="fa-regular fa-spinner fa-spin text-muji-linen text-lg"></i>
+        <i class="fa-solid fa-spinner fa-spin text-muji-linen text-lg"></i>
         <p class="text-sm text-muji-text-light mt-2">資料正在載入中...</p>
       </div>
 
@@ -130,7 +130,7 @@ onMounted(async () => {
           @click="router.push({ name: 'ResultInput', params: { id: order.id } })"
         >
           <div v-if="order.isUrgent" class="flex-shrink-0">
-            <i class="fa-regular fa-flag text-muji-red text-sm"></i>
+            <i class="fa-solid fa-flag text-muji-red text-sm"></i>
           </div>
           <div class="flex-1 min-w-0">
             <p class="text-sm text-muji-text font-medium">{{ order.orderNumber }}</p>
@@ -146,7 +146,7 @@ onMounted(async () => {
       </div>
 
       <div v-else class="px-6 py-12 text-center">
-        <i class="fa-regular fa-circle-check text-success text-xl mb-2"></i>
+        <i class="fa-solid fa-circle-check text-success text-xl mb-2"></i>
         <p class="text-sm text-muji-text-light">沒有待處理的檢驗。</p>
       </div>
     </div>
@@ -159,7 +159,7 @@ onMounted(async () => {
           class="text-sm text-muji-text-light hover:text-muji-text transition-colors"
           @click="router.push({ name: 'ReviewList' })"
         >
-          查看全部 <i class="fa-regular fa-arrow-right text-xs ml-1"></i>
+          查看全部 <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
         </button>
       </div>
       <div class="px-6 py-4">

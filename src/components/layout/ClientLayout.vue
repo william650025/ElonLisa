@@ -10,8 +10,8 @@ const authStore = useAuthStore()
 const notifyStore = useNotificationStore()
 
 const navItems = [
-  { path: '/client/dashboard', icon: 'fa-regular fa-grid-2', label: '儀表板' },
-  { path: '/client/reports', icon: 'fa-regular fa-file-lines', label: '我的報告' },
+  { path: '/client/dashboard', icon: 'fa-solid fa-table-cells', label: '儀表板' },
+  { path: '/client/reports', icon: 'fa-solid fa-file-lines', label: '我的報告' },
 ]
 
 const currentPath = computed(() => route.path)
@@ -67,7 +67,7 @@ function logout() {
             <p class="text-2xs text-muji-text-light truncate">{{ authStore.roleDisplayName }}</p>
           </div>
           <button class="text-muji-linen hover:text-muji-charcoal transition-colors p-1" @click="logout">
-            <i class="fa-regular fa-arrow-right-from-bracket text-xs"></i>
+            <i class="fa-solid fa-arrow-right-from-bracket text-xs"></i>
           </button>
         </div>
       </div>
@@ -101,7 +101,7 @@ function logout() {
       >
         <p class="text-sm text-muji-text flex-1">{{ toast.message }}</p>
         <button class="text-muji-linen hover:text-muji-text flex-shrink-0" @click="notifyStore.removeToast(toast.id)">
-          <i class="fa-regular fa-xmark text-xs"></i>
+          <i class="fa-solid fa-xmark text-xs"></i>
         </button>
       </div>
     </div>

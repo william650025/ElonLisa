@@ -102,7 +102,7 @@ function groupedMenuItems() {
           class="text-muji-linen hover:text-muji-charcoal transition-colors p-1"
           @click="$emit('logout')"
         >
-          <i class="fa-regular fa-arrow-right-from-bracket text-xs" />
+          <i class="fa-solid fa-arrow-right-from-bracket text-xs" />
         </button>
       </div>
     </div>

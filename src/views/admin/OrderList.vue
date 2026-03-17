@@ -81,7 +81,7 @@ function goToOrderDetail(id: string) {
                active:scale-[0.98]"
         @click="goToCreateOrder"
       >
-        <i class="fa-regular fa-plus text-xs"></i>
+        <i class="fa-solid fa-plus text-xs"></i>
         新增醫令
       </button>
     </div>
@@ -89,7 +89,7 @@ function goToOrderDetail(id: string) {
     <!-- 搜尋與篩選 -->
     <div class="flex items-center gap-4">
       <div class="relative flex-1 max-w-md">
-        <i class="fa-regular fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs text-muji-linen"></i>
+        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs text-muji-linen"></i>
         <input
           v-model="orderStore.searchQuery"
           type="text"
@@ -130,7 +130,7 @@ function goToOrderDetail(id: string) {
     <div class="bg-white rounded-sm border border-muji-border shadow-sm overflow-hidden">
       <!-- Loading -->
       <div v-if="orderStore.loading" class="px-6 py-12 text-center">
-        <i class="fa-regular fa-spinner fa-spin text-muji-linen text-lg"></i>
+        <i class="fa-solid fa-spinner fa-spin text-muji-linen text-lg"></i>
         <p class="text-sm text-muji-text-light mt-2">資料正在載入中...</p>
       </div>
 
@@ -163,7 +163,7 @@ function goToOrderDetail(id: string) {
                 v-if="order.isUrgent"
                 class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-sm text-2xs font-medium tracking-wide bg-[#FDF1F1] text-muji-red border border-muji-red/20"
               >
-                <i class="fa-regular fa-triangle-exclamation text-[10px]"></i>
+                <i class="fa-solid fa-triangle-exclamation text-[10px]"></i>
                 緊急
               </span>
               <span v-else class="text-sm text-muji-text-light">一般</span>
@@ -182,7 +182,7 @@ function goToOrderDetail(id: string) {
             <td class="px-6 py-3.5 text-muji-text-light">{{ formatDate(order.orderedAt) }}</td>
             <td class="px-6 py-3.5 text-right">
               <button class="text-xs text-muji-text-light hover:text-muji-text transition-colors">
-                查看 <i class="fa-regular fa-arrow-right text-[10px] ml-0.5"></i>
+                查看 <i class="fa-solid fa-arrow-right text-[10px] ml-0.5"></i>
               </button>
             </td>
           </tr>

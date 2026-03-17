@@ -78,7 +78,7 @@ const maxWidthClass: Record<string, string> = {
                   class="text-muji-linen hover:text-muji-charcoal transition-colors duration-150 p-1"
                   @click="emit('close')"
                 >
-                  <i class="fa-regular fa-xmark text-base" />
+                  <i class="fa-solid fa-xmark text-base" />
                 </button>
               </div>
 

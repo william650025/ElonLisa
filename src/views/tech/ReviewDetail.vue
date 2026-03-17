@@ -106,7 +106,7 @@ onMounted(async () => {
         class="text-sm text-muji-text-light hover:text-muji-text transition-colors mb-2 inline-flex items-center gap-1"
         @click="router.push({ name: 'ReviewList' })"
       >
-        <i class="fa-regular fa-arrow-left text-xs"></i>
+        <i class="fa-solid fa-arrow-left text-xs"></i>
         返回待核發清單
       </button>
       <h1 class="text-2xl font-light text-muji-text tracking-tight">
@@ -116,7 +116,7 @@ onMounted(async () => {
 
     <!-- Loading -->
     <div v-if="reportStore.loading" class="text-center py-16">
-      <i class="fa-regular fa-spinner fa-spin text-muji-linen text-lg"></i>
+      <i class="fa-solid fa-spinner fa-spin text-muji-linen text-lg"></i>
       <p class="text-sm text-muji-text-light mt-2">資料正在載入中...</p>
     </div>
 
@@ -179,7 +179,7 @@ onMounted(async () => {
                  active:scale-[0.98]"
           @click="router.push({ name: 'ReviewList' })"
         >
-          <i class="fa-regular fa-rotate-left text-xs"></i>
+          <i class="fa-solid fa-rotate-left text-xs"></i>
           退回重新輸入
         </button>
         <button
@@ -194,7 +194,7 @@ onMounted(async () => {
                  disabled:opacity-40 disabled:cursor-not-allowed"
           @click="showApproveModal = true"
         >
-          <i class="fa-regular fa-circle-check text-xs"></i>
+          <i class="fa-solid fa-circle-check text-xs"></i>
           核發報告
         </button>
       </div>
@@ -211,7 +211,7 @@ onMounted(async () => {
           <div class="flex items-center justify-between px-6 py-4 border-b border-muji-border">
             <h3 class="text-base font-normal text-muji-text tracking-tight">確認核發報告？</h3>
             <button class="text-muji-linen hover:text-muji-charcoal transition-colors p-1" @click="showApproveModal = false">
-              <i class="fa-regular fa-xmark text-base"></i>
+              <i class="fa-solid fa-xmark text-base"></i>
             </button>
           </div>
           <div class="px-6 py-5">

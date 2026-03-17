@@ -9,21 +9,21 @@ const authStore = useAuthStore()
 const roles = [
   {
     key: 'admin' as UserRole,
-    icon: 'fa-regular fa-user-tie',
+    icon: 'fa-solid fa-user-tie',
     title: '行政人員',
     subtitle: 'Admin Staff',
     route: '/admin/dashboard',
   },
   {
     key: 'technologist' as UserRole,
-    icon: 'fa-regular fa-microscope',
+    icon: 'fa-solid fa-microscope',
     title: '醫檢師',
     subtitle: 'Medical Technologist',
     route: '/tech/dashboard',
   },
   {
     key: 'client' as UserRole,
-    icon: 'fa-regular fa-building',
+    icon: 'fa-solid fa-building',
     title: '客戶',
     subtitle: 'Client',
     route: '/client/dashboard',

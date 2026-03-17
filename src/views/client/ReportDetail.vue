@@ -123,7 +123,7 @@ onMounted(async () => {
           class="text-sm text-muji-text-light hover:text-muji-text transition-colors mb-2 inline-flex items-center gap-1"
           @click="router.push({ name: 'ReportList' })"
         >
-          <i class="fa-regular fa-arrow-left text-xs"></i>
+          <i class="fa-solid fa-arrow-left text-xs"></i>
           返回報告列表
         </button>
         <h1 class="text-2xl font-light text-muji-text tracking-tight">
@@ -136,7 +136,7 @@ onMounted(async () => {
                  text-sm text-muji-charcoal border border-muji-border rounded-sm
                  hover:bg-muji-cream transition-colors duration-150"
         >
-          <i class="fa-regular fa-download text-xs"></i>
+          <i class="fa-solid fa-download text-xs"></i>
           下載報告
         </button>
         <button
@@ -144,7 +144,7 @@ onMounted(async () => {
                  text-sm text-muji-charcoal border border-muji-border rounded-sm
                  hover:bg-muji-cream transition-colors duration-150"
         >
-          <i class="fa-regular fa-print text-xs"></i>
+          <i class="fa-solid fa-print text-xs"></i>
           列印
         </button>
       </div>
@@ -152,7 +152,7 @@ onMounted(async () => {
 
     <!-- Loading -->
     <div v-if="reportStore.loading" class="text-center py-16">
-      <i class="fa-regular fa-spinner fa-spin text-muji-linen text-lg"></i>
+      <i class="fa-solid fa-spinner fa-spin text-muji-linen text-lg"></i>
       <p class="text-sm text-muji-text-light mt-2">資料正在載入中...</p>
     </div>
 
@@ -222,7 +222,7 @@ onMounted(async () => {
                   ]"
                   @click.stop="toggleTrend(result.testItemId)"
                 >
-                  <i class="fa-regular fa-chart-line"></i>
+                  <i class="fa-solid fa-chart-line"></i>
                 </button>
               </td>
             </tr>
@@ -235,7 +235,7 @@ onMounted(async () => {
         <span>▼ 低於參考範圍</span>
         <span>▲ 高於參考範圍</span>
         <span class="text-muji-red">!! 危急值（需立即聯繫醫師）</span>
-        <span><i class="fa-regular fa-chart-line text-[10px]"></i> 查看歷史趨勢</span>
+        <span><i class="fa-solid fa-chart-line text-[10px]"></i> 查看歷史趨勢</span>
       </div>
 
       <!-- Trend Chart (Simplified) -->
@@ -248,7 +248,7 @@ onMounted(async () => {
             class="text-muji-text-light hover:text-muji-text transition-colors"
             @click="showTrendChart = false"
           >
-            <i class="fa-regular fa-xmark text-sm"></i>
+            <i class="fa-solid fa-xmark text-sm"></i>
           </button>
         </div>
 
@@ -302,7 +302,7 @@ onMounted(async () => {
         v-if="hasAnyAbnormal"
         class="flex items-start gap-3 p-4 rounded-sm bg-muji-white border border-muji-border"
       >
-        <i class="fa-regular fa-circle-info text-muji-charcoal mt-0.5 flex-shrink-0"></i>
+        <i class="fa-solid fa-circle-info text-muji-charcoal mt-0.5 flex-shrink-0"></i>
         <div>
           <p class="text-sm font-medium text-muji-text mb-0.5">注意事項</p>
           <p class="text-sm text-muji-text-light leading-relaxed">

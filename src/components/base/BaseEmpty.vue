@@ -6,7 +6,7 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  icon: 'fa-regular fa-inbox',
+  icon: 'fa-solid fa-inbox',
   title: '暫無資料',
   description: '',
 })

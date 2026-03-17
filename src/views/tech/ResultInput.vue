@@ -154,7 +154,7 @@ watch(testItems, () => {
         class="text-sm text-muji-text-light hover:text-muji-text transition-colors mb-2 inline-flex items-center gap-1"
         @click="router.push({ name: 'Worklist' })"
       >
-        <i class="fa-regular fa-arrow-left text-xs"></i>
+        <i class="fa-solid fa-arrow-left text-xs"></i>
         返回工作清單
       </button>
       <h1 class="text-2xl font-light text-muji-text tracking-tight">
@@ -164,7 +164,7 @@ watch(testItems, () => {
 
     <!-- Loading -->
     <div v-if="orderStore.loading" class="text-center py-16">
-      <i class="fa-regular fa-spinner fa-spin text-muji-linen text-lg"></i>
+      <i class="fa-solid fa-spinner fa-spin text-muji-linen text-lg"></i>
       <p class="text-sm text-muji-text-light mt-2">資料正在載入中...</p>
     </div>
 
@@ -176,7 +176,7 @@ watch(testItems, () => {
           <span class="text-muji-text-light">ID：{{ patient?.medicalRecordNumber || '-' }}</span>
           <span class="text-muji-text-light">項目數：{{ testItems.length }}</span>
           <span v-if="order.isUrgent" class="inline-flex items-center gap-1 text-muji-red text-xs font-medium">
-            <i class="fa-regular fa-flag text-[10px]"></i>
+            <i class="fa-solid fa-flag text-[10px]"></i>
             STAT
           </span>
         </div>
@@ -187,7 +187,7 @@ watch(testItems, () => {
         v-if="showCriticalAlert"
         class="flex items-start gap-3 p-4 rounded-sm bg-[#FDF1F1] border border-muji-red/30"
       >
-        <i class="fa-regular fa-circle-exclamation text-muji-red mt-0.5 flex-shrink-0 text-base"></i>
+        <i class="fa-solid fa-circle-exclamation text-muji-red mt-0.5 flex-shrink-0 text-base"></i>
         <div class="flex-1">
           <p class="text-sm font-medium text-muji-red mb-0.5 tracking-wide">危急值警報</p>
           <p class="text-sm text-muji-red/80 leading-relaxed">{{ criticalAlertMessage }}</p>
@@ -196,7 +196,7 @@ watch(testItems, () => {
           class="text-muji-red/40 hover:text-muji-red flex-shrink-0"
           @click="showCriticalAlert = false"
         >
-          <i class="fa-regular fa-xmark text-sm"></i>
+          <i class="fa-solid fa-xmark text-sm"></i>
         </button>
       </div>
 
@@ -286,7 +286,7 @@ watch(testItems, () => {
                  disabled:opacity-40 disabled:cursor-not-allowed"
           @click="saveResults"
         >
-          <i class="fa-regular fa-circle-check text-xs"></i>
+          <i class="fa-solid fa-circle-check text-xs"></i>
           {{ isSaving ? '送出中...' : '送審' }}
         </button>
       </div>

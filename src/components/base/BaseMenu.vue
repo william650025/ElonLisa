@@ -29,7 +29,7 @@ const emit = defineEmits<{
       class="flex items-center justify-center w-8 h-8 rounded-sm text-muji-text-light hover:text-muji-text hover:bg-muji-beige transition-colors duration-150"
     >
       <slot name="trigger">
-        <i class="fa-regular fa-ellipsis-vertical text-sm" />
+        <i class="fa-solid fa-ellipsis-vertical text-sm" />
       </slot>
     </MenuButton>
 

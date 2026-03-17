@@ -65,7 +65,7 @@ onMounted(async () => {
         class="text-sm text-muji-text-light hover:text-muji-text transition-colors mb-2 inline-flex items-center gap-1"
         @click="router.push({ name: 'OrderList' })"
       >
-        <i class="fa-regular fa-arrow-left text-xs"></i>
+        <i class="fa-solid fa-arrow-left text-xs"></i>
         返回醫令清單
       </button>
       <div class="flex items-center gap-4">
@@ -78,7 +78,7 @@ onMounted(async () => {
 
     <!-- Loading -->
     <div v-if="orderStore.loading" class="text-center py-16">
-      <i class="fa-regular fa-spinner fa-spin text-muji-linen text-lg"></i>
+      <i class="fa-solid fa-spinner fa-spin text-muji-linen text-lg"></i>
       <p class="text-sm text-muji-text-light mt-2">資料正在載入中...</p>
     </div>
 
@@ -97,7 +97,7 @@ onMounted(async () => {
                     : 'bg-white border-muji-border text-muji-text-light'
                 ]"
               >
-                <i v-if="index < currentStatusIndex" class="fa-regular fa-check text-sm"></i>
+                <i v-if="index < currentStatusIndex" class="fa-solid fa-check text-sm"></i>
                 <span v-else class="text-xs">{{ index + 1 }}</span>
               </div>
               <span :class="['text-xs', index <= currentStatusIndex ? 'text-muji-text font-medium' : 'text-muji-text-light']">

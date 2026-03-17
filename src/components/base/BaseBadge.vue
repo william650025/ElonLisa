@@ -20,7 +20,7 @@ const dotIcon: Record<string, string> = {
   warning: 'fa-solid fa-circle',
   info: 'fa-solid fa-circle',
   neutral: 'fa-solid fa-circle',
-  critical: 'fa-regular fa-triangle-exclamation',
+  critical: 'fa-solid fa-triangle-exclamation',
 }
 </script>
 

@@ -56,7 +56,7 @@ onMounted(async () => {
       <div class="bg-white rounded-sm border border-muji-border shadow-sm p-6">
         <div class="flex items-center justify-between mb-4">
           <span class="text-2xs font-medium tracking-widest uppercase text-muji-text-light">已完成報告</span>
-          <i class="fa-regular fa-file-lines text-muji-linen text-base"></i>
+          <i class="fa-solid fa-file-lines text-muji-linen text-base"></i>
         </div>
         <div class="text-[28px] font-light text-muji-text tracking-tight leading-none mb-2">
           {{ publishedReports.length }}
@@ -65,7 +65,7 @@ onMounted(async () => {
           class="text-xs text-muji-text-light hover:text-muji-text transition-colors"
           @click="router.push({ name: 'ReportList' })"
         >
-          查看所有報告 <i class="fa-regular fa-arrow-right text-[10px] ml-0.5"></i>
+          查看所有報告 <i class="fa-solid fa-arrow-right text-[10px] ml-0.5"></i>
         </button>
       </div>
 
@@ -89,12 +89,12 @@ onMounted(async () => {
           class="text-sm text-muji-text-light hover:text-muji-text transition-colors"
           @click="router.push({ name: 'ReportList' })"
         >
-          查看全部 <i class="fa-regular fa-arrow-right text-xs ml-1"></i>
+          查看全部 <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
         </button>
       </div>
 
       <div v-if="reportStore.loading" class="px-6 py-12 text-center">
-        <i class="fa-regular fa-spinner fa-spin text-muji-linen text-lg"></i>
+        <i class="fa-solid fa-spinner fa-spin text-muji-linen text-lg"></i>
         <p class="text-sm text-muji-text-light mt-2">資料正在載入中...</p>
       </div>
 
@@ -110,13 +110,13 @@ onMounted(async () => {
             <p class="text-xs text-muji-text-light mt-0.5">{{ getPatientName(report.patientId) }} · {{ formatDate(report.createdAt) }}</p>
           </div>
           <button class="text-xs text-muji-text-light hover:text-muji-text transition-colors">
-            查看 <i class="fa-regular fa-arrow-right text-[10px] ml-0.5"></i>
+            查看 <i class="fa-solid fa-arrow-right text-[10px] ml-0.5"></i>
           </button>
         </div>
       </div>
 
       <div v-else class="px-6 py-12 text-center">
-        <i class="fa-regular fa-file-lines text-muji-linen text-2xl block mb-3"></i>
+        <i class="fa-solid fa-file-lines text-muji-linen text-2xl block mb-3"></i>
         <p class="text-sm text-muji-text-light">尚無相關紀錄。</p>
       </div>
     </div>

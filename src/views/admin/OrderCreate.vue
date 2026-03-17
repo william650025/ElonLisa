@@ -130,7 +130,7 @@ async function submitOrder() {
         class="text-sm text-muji-text-light hover:text-muji-text transition-colors mb-2 inline-flex items-center gap-1"
         @click="router.push({ name: 'OrderList' })"
       >
-        <i class="fa-regular fa-arrow-left text-xs"></i>
+        <i class="fa-solid fa-arrow-left text-xs"></i>
         返回醫令清單
       </button>
       <h1 class="text-2xl font-light text-muji-text tracking-tight">開立醫令</h1>
@@ -174,7 +174,7 @@ async function submitOrder() {
         <h2 class="text-xl font-light text-muji-text tracking-tight">選擇病患</h2>
 
         <div class="relative max-w-md">
-          <i class="fa-regular fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs text-muji-linen"></i>
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs text-muji-linen"></i>
           <input
             v-model="patientSearch"
             type="text"
@@ -229,7 +229,7 @@ async function submitOrder() {
         </div>
 
         <div class="relative max-w-md">
-          <i class="fa-regular fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs text-muji-linen"></i>
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-xs text-muji-linen"></i>
           <input
             v-model="testItemStore.searchQuery"
             type="text"
@@ -394,7 +394,7 @@ async function submitOrder() {
                active:scale-[0.98]"
         @click="prevStep"
       >
-        <i class="fa-regular fa-arrow-left text-xs"></i>
+        <i class="fa-solid fa-arrow-left text-xs"></i>
         上一步
       </button>
       <div v-else></div>
@@ -413,7 +413,7 @@ async function submitOrder() {
         @click="nextStep"
       >
         下一步
-        <i class="fa-regular fa-arrow-right text-xs"></i>
+        <i class="fa-solid fa-arrow-right text-xs"></i>
       </button>
 
       <button
@@ -427,7 +427,7 @@ async function submitOrder() {
                active:scale-[0.98]"
         @click="openConfirm"
       >
-        <i class="fa-regular fa-circle-check text-xs"></i>
+        <i class="fa-solid fa-circle-check text-xs"></i>
         送出醫令
       </button>
     </div>
@@ -443,7 +443,7 @@ async function submitOrder() {
           <div class="flex items-center justify-between px-6 py-4 border-b border-muji-border">
             <h3 class="text-base font-normal text-muji-text tracking-tight">確認送出醫令</h3>
             <button class="text-muji-linen hover:text-muji-charcoal transition-colors p-1" @click="showConfirmModal = false">
-              <i class="fa-regular fa-xmark text-base"></i>
+              <i class="fa-solid fa-xmark text-base"></i>
             </button>
           </div>
           <div class="px-6 py-5">

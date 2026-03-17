@@ -82,7 +82,7 @@ function goToOrderDetail(id: string) {
           <span class="text-2xs font-medium tracking-widest uppercase text-muji-text-light">
             緊急件
           </span>
-          <i class="fa-regular fa-triangle-exclamation text-muji-red text-base"></i>
+          <i class="fa-solid fa-triangle-exclamation text-muji-red text-base"></i>
         </div>
         <div class="text-[28px] font-light text-muji-red tracking-tight leading-none mb-2">
           {{ orderStore.orderStats.critical }}
@@ -105,14 +105,14 @@ function goToOrderDetail(id: string) {
                  active:scale-[0.98]"
           @click="goToCreateOrder"
         >
-          <i class="fa-regular fa-plus text-xs"></i>
+          <i class="fa-solid fa-plus text-xs"></i>
           新增醫令
         </button>
       </div>
 
       <!-- Loading -->
       <div v-if="orderStore.loading" class="px-6 py-12 text-center">
-        <i class="fa-regular fa-spinner fa-spin text-muji-linen text-lg"></i>
+        <i class="fa-solid fa-spinner fa-spin text-muji-linen text-lg"></i>
         <p class="text-sm text-muji-text-light mt-2">資料正在載入中...</p>
       </div>
 
@@ -169,7 +169,7 @@ function goToOrderDetail(id: string) {
           class="text-sm text-muji-text-light hover:text-muji-text transition-colors duration-150"
           @click="goToOrders"
         >
-          查看全部醫令 <i class="fa-regular fa-arrow-right text-xs ml-1"></i>
+          查看全部醫令 <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
         </button>
       </div>
     </div>

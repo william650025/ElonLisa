@@ -53,7 +53,7 @@ const sizeClasses: Record<string, string> = {
     :disabled="props.disabled || props.loading"
     @click="$emit('click', $event)"
   >
-    <i v-if="props.loading" class="fa-regular fa-spinner fa-spin text-xs" />
+    <i v-if="props.loading" class="fa-solid fa-spinner fa-spin text-xs" />
     <i v-else-if="props.icon" :class="[props.icon, 'text-xs']" />
     <slot />
   </button>

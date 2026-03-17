@@ -112,7 +112,7 @@ onMounted(async () => {
           class="text-sm text-muji-text-light hover:text-muji-text transition-colors mb-2 inline-flex items-center gap-1"
           @click="router.push({ name: 'ReviewList' })"
         >
-          <i class="fa-regular fa-arrow-left text-xs"></i>
+          <i class="fa-solid fa-arrow-left text-xs"></i>
           返回報告審核
         </button>
         <h1 class="text-2xl font-light text-muji-text tracking-tight">
@@ -125,7 +125,7 @@ onMounted(async () => {
                  text-sm text-muji-charcoal border border-muji-border rounded-sm
                  hover:bg-muji-cream transition-colors duration-150"
         >
-          <i class="fa-regular fa-print text-xs"></i>
+          <i class="fa-solid fa-print text-xs"></i>
           列印
         </button>
       </div>
@@ -133,7 +133,7 @@ onMounted(async () => {
 
     <!-- Loading -->
     <div v-if="reportStore.loading" class="text-center py-16">
-      <i class="fa-regular fa-spinner fa-spin text-muji-linen text-lg"></i>
+      <i class="fa-solid fa-spinner fa-spin text-muji-linen text-lg"></i>
       <p class="text-sm text-muji-text-light mt-2">資料正在載入中...</p>
     </div>
 
@@ -169,7 +169,7 @@ onMounted(async () => {
         <!-- Report Meta -->
         <div class="bg-white rounded-sm border border-muji-border shadow-sm p-6 space-y-4">
           <h2 class="text-sm font-medium text-muji-text flex items-center gap-2">
-            <i class="fa-regular fa-file-lines text-xs text-muji-text-light"></i>
+            <i class="fa-solid fa-file-lines text-xs text-muji-text-light"></i>
             報告資訊
           </h2>
           <div class="grid grid-cols-2 gap-4 text-sm">
@@ -207,11 +207,11 @@ onMounted(async () => {
       <!-- Summary Stats -->
       <div class="flex items-center gap-6">
         <div class="flex items-center gap-2 text-sm text-muji-text-light">
-          <i class="fa-regular fa-vial text-xs"></i>
+          <i class="fa-solid fa-vial text-xs"></i>
           共 {{ resultStore.currentResults.length }} 項檢驗
         </div>
         <div v-if="abnormalCount > 0" class="flex items-center gap-2 text-sm text-warning">
-          <i class="fa-regular fa-triangle-exclamation text-xs"></i>
+          <i class="fa-solid fa-triangle-exclamation text-xs"></i>
           {{ abnormalCount }} 項異常
         </div>
       </div>
@@ -254,7 +254,7 @@ onMounted(async () => {
         v-if="report.rejectionReason"
         class="flex items-start gap-3 p-4 rounded-sm bg-[#FDF1F1] border border-muji-red/20"
       >
-        <i class="fa-regular fa-circle-exclamation text-muji-red mt-0.5 flex-shrink-0"></i>
+        <i class="fa-solid fa-circle-exclamation text-muji-red mt-0.5 flex-shrink-0"></i>
         <div>
           <p class="text-sm font-medium text-muji-text mb-0.5">退回原因</p>
           <p class="text-sm text-muji-text-light leading-relaxed">{{ report.rejectionReason }}</p>
@@ -267,7 +267,7 @@ onMounted(async () => {
         class="bg-white rounded-sm border border-muji-border shadow-sm p-6"
       >
         <h2 class="text-sm font-medium text-muji-text mb-3 flex items-center gap-2">
-          <i class="fa-regular fa-clipboard text-xs text-muji-text-light"></i>
+          <i class="fa-solid fa-clipboard text-xs text-muji-text-light"></i>
           報告摘要
         </h2>
         <p class="text-sm text-muji-text-light leading-relaxed">{{ report.summary }}</p>
@@ -283,7 +283,7 @@ onMounted(async () => {
 
     <!-- Not Found -->
     <div v-else class="text-center py-16">
-      <i class="fa-regular fa-file-circle-question text-muji-linen text-2xl block mb-3"></i>
+      <i class="fa-solid fa-file-circle-question text-muji-linen text-2xl block mb-3"></i>
       <p class="text-sm text-muji-text-light">找不到指定的報告。</p>
     </div>
   </div>

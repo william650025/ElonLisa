@@ -22,9 +22,9 @@ const trendColor: Record<string, string> = {
 }
 
 const trendIcon: Record<string, string> = {
-  up: 'fa-regular fa-arrow-trend-up',
-  down: 'fa-regular fa-arrow-trend-down',
-  neutral: 'fa-regular fa-minus',
+  up: 'fa-solid fa-arrow-trend-up',
+  down: 'fa-solid fa-arrow-trend-down',
+  neutral: 'fa-solid fa-minus',
 }
 </script>
 

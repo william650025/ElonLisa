@@ -10,10 +10,10 @@ const authStore = useAuthStore()
 const notifyStore = useNotificationStore()
 
 const navItems = [
-  { path: '/tech/dashboard', icon: 'fa-regular fa-grid-2', label: '儀表板' },
-  { path: '/tech/worklist', icon: 'fa-regular fa-flask', label: '工作清單' },
-  { path: '/tech/review', icon: 'fa-regular fa-file-lines', label: '報告審核' },
-  { path: '/tech/qc', icon: 'fa-regular fa-chart-simple', label: '品質管控' },
+  { path: '/tech/dashboard', icon: 'fa-solid fa-table-cells', label: '儀表板' },
+  { path: '/tech/worklist', icon: 'fa-solid fa-flask', label: '工作清單' },
+  { path: '/tech/review', icon: 'fa-solid fa-file-lines', label: '報告審核' },
+  { path: '/tech/qc', icon: 'fa-solid fa-chart-simple', label: '品質管控' },
 ]
 
 const currentPath = computed(() => route.path)
@@ -69,7 +69,7 @@ function logout() {
             <p class="text-2xs text-muji-text-light truncate">{{ authStore.roleDisplayName }}</p>
           </div>
           <button class="text-muji-linen hover:text-muji-charcoal transition-colors p-1" @click="logout">
-            <i class="fa-regular fa-arrow-right-from-bracket text-xs"></i>
+            <i class="fa-solid fa-arrow-right-from-bracket text-xs"></i>
           </button>
         </div>
       </div>
@@ -103,7 +103,7 @@ function logout() {
       >
         <p class="text-sm text-muji-text flex-1">{{ toast.message }}</p>
         <button class="text-muji-linen hover:text-muji-text flex-shrink-0" @click="notifyStore.removeToast(toast.id)">
-          <i class="fa-regular fa-xmark text-xs"></i>
+          <i class="fa-solid fa-xmark text-xs"></i>
         </button>
       </div>
     </div>

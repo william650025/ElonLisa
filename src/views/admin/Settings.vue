@@ -4,9 +4,9 @@ import { ref } from 'vue'
 const activeSection = ref('tests')
 
 const sections = [
-  { key: 'tests', label: '檢驗項目管理', iconClass: 'fa-regular fa-flask-vial' },
-  { key: 'users', label: '使用者管理', iconClass: 'fa-regular fa-users' },
-  { key: 'system', label: '系統參數', iconClass: 'fa-regular fa-sliders' },
+  { key: 'tests', label: '檢驗項目管理', iconClass: 'fa-solid fa-flask-vial' },
+  { key: 'users', label: '使用者管理', iconClass: 'fa-solid fa-users' },
+  { key: 'system', label: '系統參數', iconClass: 'fa-solid fa-sliders' },
 ]
 
 // Mock data
